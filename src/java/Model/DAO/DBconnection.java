@@ -1,10 +1,11 @@
- 
+
+package Model.Dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
  
 public class DBconnection {
- public static Connection createConnection()
- {
+ public static Connection createConnection(){
+     
      Connection con = null;
      String url = "jdbc:mysql://localhost:3306/carrental"; //MySQL URL followed by the database name
      String username = "root"; //MySQL username

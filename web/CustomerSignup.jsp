@@ -69,7 +69,7 @@ function validate()
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-          <form name="CustomerServlet" action="${pageContext.request.contextPath}/CustomerServlet" method="post" onsubmit="return validate()">
+          <form action="CustomerSignup" method="post" onsubmit="return validate()">
                 <div class="form-label">
                     <label for="firstname">First name:</label>
                     <input type="text" class="form-control" placeholder="Enter your first name" name="firstnamef">
@@ -83,11 +83,17 @@ function validate()
                     <input type="number" class="form-control" placeholder="Enter your phone number" name="phonef">
                 </div>
               <tr>
-         <td><%=(request.getAttribute("errMessage") == null) ? ""
-         : request.getAttribute("errMessage")%></td>
-         </tr>
+            <center>
+                <h3 style="color:red;">
+                <%
+                if(request.getAttribute("InsertErrorMsg")!=null){
+                    out.println(request.getAttribute("InsertErrorMsg"));
+                }
+                %>
+                </h3>
+            </center>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Signup</button>
+          <button name="customerSignupf" type="submit" class="btn btn-primary">Signup</button>
           <button type="reset" value="Reset" class="btn btn-secondary">Reset</button>
         </div>
             </form>

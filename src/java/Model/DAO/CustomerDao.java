@@ -1,5 +1,7 @@
 
-import Model.CustomerBean;
+package Model.Dao;
+
+import Model.Bean.CustomerBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -9,20 +11,19 @@ public class CustomerDao {
      {
          String firstname = customerBe.getFirstname();
          String lastname = customerBe.getLastname();
-         int phone = customerBe.getPhone();
+         String phone = customerBe.getPhone();
          
          Connection con = null;
-         PreparedStatement preparedStatement = null;         
-         try
-         {
+         PreparedStatement pstmt = null;         
+         try{
              con = DBconnection.createConnection();
              String query = "insert into customer(first_name, last_name, phone_number) values (?,?,?)"; //Insert user details into the table 'USERS'
-             preparedStatement = con.prepareStatement(query); //Making use of prepared statements here to insert bunch of data
-             preparedStatement.setString(1, firstname);
-             preparedStatement.setString(2, lastname);
-             preparedStatement.setInt(3, phone);
+             pstmt = con.prepareStatement(query); //Making use of prepared statements here to insert bunch of data
+             pstmt.setString(1, firstname);
+             pstmt.setString(2, lastname);
+             pstmt.setString(3, phone);
              
-             int i= preparedStatement.executeUpdate();
+             int i= pstmt.executeUpdate();
              
              if (i!=0)  //Just to ensure data has been inserted into the database
              return "SUCCESS"; 

@@ -2,14 +2,14 @@
 package Controller;
 
 import Model.Bean.CustomerBean;
-import Model.Dao.CustomerDao;
+import Model.DAO.CustomerDao;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CustomerServlet extends HttpServlet {
+public class CustomerServlete extends HttpServlet {
 
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,7 +39,7 @@ public class CustomerServlet extends HttpServlet {
          else   //On Failure, display a meaningful message to the User.
          {
             request.setAttribute("InsertErrorMsg", insertValidate);
-            request.getRequestDispatcher("/CustomerServvlet.jsp").include(request, response);
+            request.getRequestDispatcher("/CustomerServvlete.jsp").include(request, response);
          }
      }
 }

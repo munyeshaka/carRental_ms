@@ -1,19 +1,14 @@
 
-package Model;
+package Model.Bean;
 
 
  
 public class CustomerBean {
-    private int phone;
-    private String firstname,lastname;
+    private String firstname, lastname, phone;
 
 public CustomerBean() {
 
 }
-
-    public int getPhone() {
-        return phone;
-    }
 
     public String getFirstname() {
         return firstname;
@@ -23,8 +18,8 @@ public CustomerBean() {
         return lastname;
     }
 
-    public void setPhone(int phone) {
-        this.phone = phone;
+    public String getPhone() {
+        return phone;
     }
 
     public void setFirstname(String firstname) {
@@ -36,6 +31,7 @@ public CustomerBean() {
     }
 
     public void setPhone(String phone) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.phone = phone;
     }
-}
+
+}  

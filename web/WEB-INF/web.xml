@@ -4,9 +4,17 @@
         <servlet-name>CustomerServlet</servlet-name>
         <servlet-class>Controller.CustomerServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReservationServlet</servlet-name>
+        <servlet-class>Controller.ReservationServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CustomerServlet</servlet-name>
         <url-pattern>/CustomerSignup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReservationServlet</servlet-name>
+        <url-pattern>/ReservationServletURL</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

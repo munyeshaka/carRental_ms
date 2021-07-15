@@ -25,6 +25,7 @@ public class CustomerServlet extends HttpServlet {
          CustomerB.setFirstname(firstname);
          CustomerB.setLastname(lastname);
          CustomerB.setPhone(phone);
+         //boolean status = CustomerB.validate();
          
          CustomerDao CustomerD = new CustomerDao();
          
